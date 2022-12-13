@@ -1,0 +1,25 @@
+.search{
+    height:50px;
+    padding-top: 10px;
+}
+
+.search input{
+    padding:10px 5px;
+    position: absolute;
+    right: 240px;
+    width: 220px;
+    outline: none;
+}
+
+.search button{
+    position: absolute;
+    height: 39px;
+    right: 20px;
+    padding: 10px 5px;
+    right: 170px;
+    color: rgba(51,51,51,0.5);
+    cursor: pointer;
+    width: 65px;
+    font-weight: 500;
+    background-color: white;
+}

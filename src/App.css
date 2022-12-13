@@ -1,0 +1,21 @@
+.app{
+    background-color: black;
+}
+.modal_box{
+    background-color: black;
+    color: white;
+}
+
+.modal_box img{
+    max-height: 120px;
+}
+
+.modal_box h1{
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.modal_box div{
+    margin-top: 10px;
+    font-size: 15px;
+}
