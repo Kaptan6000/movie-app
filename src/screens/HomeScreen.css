@@ -1,6 +1,7 @@
 .search{
-    height:50px;
+    /* height:10px; */
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .search input{

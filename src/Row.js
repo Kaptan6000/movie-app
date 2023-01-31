@@ -20,6 +20,10 @@ function Row({title,fetchUrl,isLargeRow=false}){
     const [omdbdata,setomdbdata] = useState([]);
     const [imdbid,setImdbid] = useState([]);
     const [imdbdata,setImdbdata] = useState([]);
+    const [tmdbRating,settmdbrating] = useState([]);
+    const [imdbrating,setimdbrating] = useState([]);
+    const [nextMovierating,setNextrating] = useState([]);
+    const [metaRating,setmetarating] = useState([]);
     var selectMovie = null;
     const base_url ="https://image.tmdb.org/t/p/original/";
     useEffect(()=>{
@@ -38,6 +42,7 @@ function Row({title,fetchUrl,isLargeRow=false}){
             setImdbid(omdbdata.imdbID)
             console.log(omdbdata)
             console.log(imdbid)
+            setimdbrating(omdbdata.imdbRating)
         }
         fetchomdbData();
     },[curr.original_name || curr.name || curr.title])
@@ -47,11 +52,32 @@ function Row({title,fetchUrl,isLargeRow=false}){
             await axios(`https://imdb-api.com/en/API/Ratings/k_lxiu84oz/${imdbid}`)
             .then((res)=>{setImdbdata(res.data)});
             console.log(imdbdata)
+            setmetarating(imdbdata.metacritic);
             // console.log(1)
         }
         fetchimdbData();
     },[imdbid])
    
+    useEffect(()=>{
+        function nextmovierating(){
+            let den = 0;
+            let ans = 0;
+            if(Number(tmdbRating)!=0){
+                den = den+1;
+            }
+            if(Number(imdbrating)!=0){
+                den = den+1;
+            }
+            if(Number(metaRating)!=0){
+                den = den+1;
+            }
+            ans =  (Number(tmdbRating)=="NAN"?0:(Number(tmdbRating))+(Number(imdbrating)=="NAN"?0:Number(imdbrating))
+            +(Number(metaRating)=='NAN'?0:Number(metaRating)))/den
+            setNextrating(ans);
+
+        }
+        nextmovierating();
+    },[tmdbRating || imdbrating || metaRating])
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -81,7 +107,7 @@ function Row({title,fetchUrl,isLargeRow=false}){
             <div>TMDB ratings: {curr.vote_average}</div>
             <div>IMDB ratings: {omdbdata.imdbRating}</div>
             <div>Metacritic ratings: {(imdbdata.metacritic!=" ")?imdbdata.metacritic:"NA"}</div>
-            {/* <div>OMDB ratings: {imdbdata.Ratings.Value}</div> */}
+            <div>Next Movie ratings: {nextMovierating}</div>
             </Box>
             </Modal>
 
@@ -93,6 +119,7 @@ function Row({title,fetchUrl,isLargeRow=false}){
                 e.preventDefault();
                 handleOpen();
                 setCurr(movie);
+                settmdbrating(curr.vote_average);
                 // setmoviename(curr.original_name || curr.name || curr.title);
             }}
             className={`row__poster ${isLargeRow && "row__posterLarge"}`}
