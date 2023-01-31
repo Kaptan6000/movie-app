@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/next-movie-app/static/css/main.aadbd51a.css",
-    "main.js": "/next-movie-app/static/js/main.cc90891d.js",
-    "static/js/787.7c42db31.chunk.js": "/next-movie-app/static/js/787.7c42db31.chunk.js",
-    "static/media/next_moviee.png": "/next-movie-app/static/media/next_moviee.5d4bbcefdc8628a25e6f.png",
-    "static/media/next_movie3.png": "/next-movie-app/static/media/next_movie3.1da81e62a5df93882f42.png",
-    "index.html": "/next-movie-app/index.html",
-    "main.aadbd51a.css.map": "/next-movie-app/static/css/main.aadbd51a.css.map",
-    "main.cc90891d.js.map": "/next-movie-app/static/js/main.cc90891d.js.map",
-    "787.7c42db31.chunk.js.map": "/next-movie-app/static/js/787.7c42db31.chunk.js.map"
+    "main.css": "/movie-app/static/css/main.aadbd51a.css",
+    "main.js": "/movie-app/static/js/main.f64cc3ed.js",
+    "static/js/787.7c42db31.chunk.js": "/movie-app/static/js/787.7c42db31.chunk.js",
+    "static/media/next_moviee.png": "/movie-app/static/media/next_moviee.5d4bbcefdc8628a25e6f.png",
+    "static/media/next_movie3.png": "/movie-app/static/media/next_movie3.1da81e62a5df93882f42.png",
+    "index.html": "/movie-app/index.html",
+    "main.aadbd51a.css.map": "/movie-app/static/css/main.aadbd51a.css.map",
+    "main.f64cc3ed.js.map": "/movie-app/static/js/main.f64cc3ed.js.map",
+    "787.7c42db31.chunk.js.map": "/movie-app/static/js/787.7c42db31.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aadbd51a.css",
-    "static/js/main.cc90891d.js"
+    "static/js/main.f64cc3ed.js"
   ]
 }
